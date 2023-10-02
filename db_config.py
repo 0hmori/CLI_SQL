@@ -21,8 +21,8 @@ if not db.connect():
     exit()
 
 
-class Info(Model):
-    """Info Model"""
+class User(Model):
+    """User Model"""
 
     id = IntegerField(primary_key=True)  # idは自動で追加されるが明示
     name = CharField()
@@ -30,7 +30,7 @@ class Info(Model):
 
     class Meta:
         database = db
-        table_name = "info"
+        table_name = "user"
 
 
-db.create_tables([Info])
+db.create_tables([User])

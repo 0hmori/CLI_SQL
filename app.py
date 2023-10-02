@@ -1,4 +1,4 @@
-from db_config import Info
+from db_config import User
 
 
 def prints():
@@ -11,14 +11,14 @@ def prints():
 
 
 def dispray_all_info():
-    for usre_info in Info.select():
-        print(f"Name: {usre_info.name} Age: {usre_info.age}")
+    for users_info in User.select():
+        print(f"Name: {users_info.name} Age: {users_info.age}")
 
 
 def create_user():
     user_name = input("New user name > ")
     user_age = input("New user age > ")
-    info = Info(name=user_name, age=user_age)
+    info = User(name=user_name, age=user_age)
     info.save()
     print(f"Add new user: {user_name}")
 
